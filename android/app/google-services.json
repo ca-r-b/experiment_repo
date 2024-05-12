@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "860677086820",
+    "project_id": "capit-experiment-field",
+    "storage_bucket": "capit-experiment-field.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860677086820:android:6d32822f7bb9c15fe7c971",
+        "android_client_info": {
+          "package_name": "com.example.testing_with_db"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKb_I-gUjiRT6s2a1ZTw3bk6JXGiMDlJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
