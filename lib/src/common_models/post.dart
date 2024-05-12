@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Post {
   late String id;
@@ -12,10 +12,14 @@ class Post {
       required this.content,
       required this.userId});
 
-  Post.fromDocumentSnapshot(DocumentSnapshot docSnap) {
-    id = docSnap.id;
-    title = docSnap['title'];
-    content = docSnap['content'];
-    userId = docSnap['userId'];
-  }
+  // >>> NOTE:
+  //  - Don't know how this works yet...
+
+  // >>> CODE:
+  // Post.fromDocumentSnapshot(DocumentSnapshot docSnap) {
+  //   id = docSnap.id;
+  //   title = docSnap['title'];
+  //   content = docSnap['content'];
+  //   userId = docSnap['userId'];
+  // }
 }

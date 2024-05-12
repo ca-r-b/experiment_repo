@@ -25,10 +25,12 @@ class SeePostView extends StatelessWidget {
             child: Column(
               children: [
                 Obx(() {
+                  // If the post has yet to fetch data, keep loading
                   if (seePostController.isLoading.value) {
                     return const Center(
                       child: Padding(
                         padding: EdgeInsets.all(10),
+                        // "GIF" / Moving image for loading
                         child: CircularProgressIndicator(),
                       ),
                     );
@@ -36,6 +38,7 @@ class SeePostView extends StatelessWidget {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // Display the data fetched from stream
                         Text(
                             "TITLE: ${seePostController.post.value!['title']}"),
                         Text(

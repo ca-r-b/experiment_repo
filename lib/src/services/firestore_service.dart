@@ -84,7 +84,3 @@ class FirestoreService {
   //   });
   // }
 }
-
-
-/// okay bois, mukhang nagawa ko yung mangggagaling lang sa isang class file yung data (snapshots eme eme)
-/// papapiliin ko nalang kayo mamaya kung ano method gusto niyo HAHHAHAHAHA tapos yung crud operations, parang naisip ko na dapat nasa separate file din, tapos call nalang sa controller para hindi nakakapagod i-type everytime

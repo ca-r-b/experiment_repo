@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:testing_with_db/src/common_models/post.dart';
+// import 'package:testing_with_db/src/common_models/post.dart';
 
 class PostTile extends StatelessWidget {
   // final Post post;

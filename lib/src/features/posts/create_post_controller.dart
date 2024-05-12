@@ -1,11 +1,12 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:testing_with_db/src/common_models/post.dart';
 import 'package:testing_with_db/src/features/posts/crud/posts_crud.dart';
-import 'package:testing_with_db/src/services/firestore_service.dart';
+// import 'package:testing_with_db/src/services/firestore_service.dart';
 
 class CreatePostController extends GetxController {
+  // Call functions for Creating, Updating & Deleting posts
   final PostsCRUD _postsCRUD = PostsCRUD();
   late Post post;
 
@@ -30,8 +31,10 @@ class CreatePostController extends GetxController {
 
   Future<void> submitPost() async {
     // Instantiate model/object first with collected values from TEXTCONTROLLERS
-    // - Can be coded without Model, but I think this is the cleaner way?
-    //   [i.e. No need to pass values as parameters + No need to declare the function (Line 46) with ALL parameters needed]
+    // - Can be coded without the use of Model, but I think this is the cleaner way?
+    //   [i.e. By 'cleaner way', I MEAN:
+    //                > No need to pass values as parameters (magulo tingnan) +
+    //                > No need to declare the function (Line 49) with ALL parameters needed]
     post = Post(
       id: "",
       title: title.value,

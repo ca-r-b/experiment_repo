@@ -20,6 +20,9 @@ class CreatePostView extends StatelessWidget {
           Expanded(
             child: Column(
               children: [
+                // NO CODE YET FOR ERROR CHECKING
+                // -----------------------------------------
+                // IMPORTANT NOTE: Look for efficient way
                 Obx(
                   () {
                     return TextFormField(
@@ -54,8 +57,9 @@ class CreatePostView extends StatelessWidget {
                 ),
                 Obx(
                   () => OutlinedButton(
+                    // The function of onPressed will have the value of 'submitFunc'
                     onPressed: createPostController.submitFunc.value,
-                    child: Text("Submit Post"),
+                    child: const Text("Submit Post"),
                   ),
                 ),
               ],
