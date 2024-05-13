@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:testing_with_db/src/features/posts/create_post_controller.dart';
 
 class CreatePostView extends StatelessWidget {
@@ -62,11 +63,77 @@ class CreatePostView extends StatelessWidget {
                     child: const Text("Submit Post"),
                   ),
                 ),
+                const SizedBox(height: 50),
+                // Add a outlined button to pick a file and display the file name
+                OutlinedButton(
+                  onPressed: createPostController.selectFile,
+                  child: const Text('Pick a file'),
+                ),
+                Obx(() {
+                  return Column(
+                    children: [
+                      // Display the file name
+                      Text(createPostController.selectedFile.value == ''
+                          ? 'example.pdf'
+                          : createPostController.selectedFile.value),
+                      Text(createPostController.fileInBytes != null
+                          ? 'File selected'
+                          : 'No file selected')
+                    ],
+                  );
+                }),
+                Obx(() {
+                  // Add a outlined button to upload the file
+                  return OutlinedButton(
+                    onPressed: () {
+                      if (createPostController.fileInBytes != null) {
+                        createPostController.uploadFileAndSaveUrl(
+                            createPostController.fileInBytes!,
+                            createPostController.selectedFile.value);
+                      }
+                    },
+                    child: createPostController.fileIsLoading.value
+                        ? const SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: CircularProgressIndicator())
+                        : const Text('Upload File'),
+                  );
+                }),
+                // Display the PDF in a bottom sheet
+                ElevatedButton(
+                  onPressed: () {
+                    showPDFInBottomSheet(context,
+                        "https://firebasestorage.googleapis.com/v0/b/flutterfirebase-6c279.appspot.com/o/GIS.pdf?alt=media&token=51654170-c140-4ffa-ae1a-9fb431d0dee2");
+                  },
+                  child: const Text('Show Sample pdf in Bottom Sheet'),
+                ),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  void showPDFInBottomSheet(BuildContext context, String url) {
+    showModalBottomSheet(
+      context: context,
+      // for full screen
+      isScrollControlled: true,
+      builder: (context) {
+        return SizedBox(
+          width: MediaQuery.of(context).size.width * 0.8,
+          child: Scaffold(
+            appBar: AppBar(
+              title: const Text('PDF Viewer'),
+            ),
+            body: SfPdfViewer.network(
+              url,
+            ),
+          ),
+        );
+      },
     );
   }
 }
