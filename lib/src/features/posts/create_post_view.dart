@@ -103,8 +103,10 @@ class CreatePostView extends StatelessWidget {
                 // Display the PDF in a bottom sheet
                 ElevatedButton(
                   onPressed: () {
-                    showPDFInBottomSheet(context,
-                        "https://firebasestorage.googleapis.com/v0/b/flutterfirebase-6c279.appspot.com/o/GIS.pdf?alt=media&token=51654170-c140-4ffa-ae1a-9fb431d0dee2");
+                    showPDFInBottomSheet(
+                        context,
+                        // "https://firebasestorage.googleapis.com/v0/b/capit-experiment-field.appspot.com/o/files%2FEAF%20-%2012031097.pdf?alt=media&token=4098964b-4b36-457f-b8b0-d7d8844c22de");
+                        'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf');
                   },
                   child: const Text('Show Sample pdf in Bottom Sheet'),
                 ),
